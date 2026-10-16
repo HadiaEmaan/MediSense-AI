@@ -97,7 +97,7 @@ async function loadOverview() {
         <tbody>${data.data.map((scan) => {
           const status = getAiStatus(scan);
           const date = scan.uploaded_at ? new Date(scan.uploaded_at).toLocaleString("en-GB", { day: "2-digit", month: "short", year: "numeric", hour: "2-digit", minute: "2-digit", timeZone: "Asia/Karachi" }) : "—";
-          return `<tr><td><code style="color:#38bdf8;font-weight:600;">${formatPatientMriId(scan)}</code></td><td>${scan.patient_name || "Unknown"}</td><td>${scan.scan_type || "—"}</td><td><span class="badge ${status.className}">${status.label}</span></td><td>${scan.confidence_score != null ? `${scan.confidence_score}%` : "—"}</td><td class="text-muted">${date}</td></tr>`;
+          return `<tr><td><code class="patient-id">${formatPatientMriId(scan)}</code></td><td>${scan.patient_name || "Unknown"}</td><td>${scan.scan_type || "—"}</td><td><span class="badge ${status.className}">${status.label}</span></td><td>${scan.confidence_score != null ? `${scan.confidence_score}%` : "—"}</td><td class="text-muted">${date}</td></tr>`;
         }).join("")}</tbody>
       </table>
     </div>`;

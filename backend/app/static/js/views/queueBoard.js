@@ -273,7 +273,7 @@ async function loadQueue(user) {
     const waitingList = q.waiting || [];
 
     activePanel.innerHTML = `
-      <div class="flex items-center gap-4 mb-4 flex-wrap" style="padding:1rem;background:#0f172a;border-radius:8px;border:1px solid #334155;">
+      <div class="queue-summary flex items-center gap-4 mb-4 flex-wrap">
         <div class="text-sm">Current Serving: <strong class="text-emerald" style="font-size:1.1rem;">${currentServing}</strong></div>
         <div class="text-sm">Last Allocated: <strong class="text-secondary">${lastAllocated}</strong></div>
         <div class="text-sm">Estimated Wait: <strong class="text-amber">${waitTime} min</strong></div>
@@ -302,7 +302,7 @@ async function loadQueue(user) {
                 return `
                   <tr>
                     <td><strong class="text-blue">#${String(a.token_number).padStart(2, "0")}</strong></td>
-                    <td><code style="color:#38bdf8;font-weight:600;background:#1e293b;padding:2px 8px;border-radius:4px;border:1px solid #334155;">${ptIdStr}</code></td>
+                    <td><code class="patient-id">${ptIdStr}</code></td>
                     <td><span class="badge badge-amber">${a.status || "WAITING"}</span></td>
                     <td class="text-muted">${dateStr} · ${timeStr}</td>
                   </tr>`;
@@ -310,7 +310,7 @@ async function loadQueue(user) {
             </tbody>
           </table>
         </div>` : `
-        <div class="text-muted text-sm" style="padding:1.5rem;text-align:center;background:#0f172a;border-radius:8px;">
+        <div class="queue-empty text-muted text-sm">
           No patients currently waiting in queue.
         </div>`}
     `;

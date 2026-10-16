@@ -228,7 +228,8 @@ input::-ms-clear {
 }
 
 .btn-primary:hover {
-  background-color: var(--accent-hover);
+  background-color: #d5ece6;
+  color: #18594f;
 }
 
 .btn-primary:active {
@@ -348,6 +349,12 @@ input::-ms-clear {
   }
 }
 
+@media (max-height: 760px) {
+  body {
+    align-items: flex-start;
+  }
+}
+
 @media (max-width: 480px) {
   .form-row {
     grid-template-columns: 1fr;
@@ -355,5 +362,102 @@ input::-ms-clear {
 
   .form-section {
     padding: 1.5rem;
+  }
+}
+
+:root {
+  --bg-page: #f2f6f3;
+  --bg-left: #ffffff;
+  --bg-right-banner: #176c54;
+  --text-primary: #20332b;
+  --text-secondary: #5f7268;
+  --text-muted: #6d7d73;
+  --accent: #176c54;
+  --accent-hover: #125941;
+  --input-bg: #f7faf8;
+  --input-border: #d5e0d8;
+  --input-border-focus: #176c54;
+  --radius-card: 0.875rem;
+  --radius-input: 0.5rem;
+  --radius-button: 0.5rem;
+}
+
+body {
+  background: radial-gradient(ellipse at top left, #ffffff 0%, #f2f6f3 58%, #e8f0eb 100%);
+  color: var(--text-primary);
+}
+
+.container {
+  min-height: min(640px, calc(100vh - 2rem));
+  border: 1px solid #dce6df;
+  background: #ffffff;
+  box-shadow: 0 24px 64px rgba(31, 55, 43, 0.12);
+}
+
+.form-section {
+  background: #ffffff;
+}
+
+.heading h1 {
+  color: #20332b;
+}
+
+.form-group label {
+  color: #4f665a;
+}
+
+.form-group input,
+.form-group select {
+  background-color: var(--input-bg);
+  border-color: var(--input-border);
+  color: var(--text-primary);
+}
+
+.form-group input::placeholder {
+  color: #89978f;
+}
+
+.input-icon {
+  color: #829188;
+}
+
+.hero-banner {
+  background: linear-gradient(145deg, #176c54, #12533f);
+}
+
+.hero-image::after {
+  background: linear-gradient(to bottom, rgba(20, 52, 39, 0.02), rgba(20, 52, 39, 0.22));
+}
+
+.footer-text a {
+  color: #176c54;
+}
+
+.field-error,
+.form-error {
+  color: #b84248;
+}
+
+@media (max-width: 900px) {
+  body {
+    align-items: flex-start;
+  }
+
+  .container {
+    min-height: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 0.5rem;
+  }
+
+  .container {
+    border-radius: 0.75rem;
+  }
+
+  .form-section {
+    padding: 1.25rem;
   }
 }

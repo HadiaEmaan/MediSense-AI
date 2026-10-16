@@ -129,22 +129,27 @@ function showStep2() {
         transition: background-color 0.2s ease;
       }
       .custom-back-btn:hover {
-        background-color: #1d4ed8;
+        background-color: #d5ece6;
+        color: #18594f;
       }
       .custom-date-picker {
-        background-color: #0f172a !important;
-        border: 1px solid #334155 !important;
-        color: #f8fafc !important;
+        background-color: #ffffff !important;
+        border: 1px solid #d5e0d8 !important;
+        color: #20332b !important;
         padding: 0.65rem 0.85rem !important;
         border-radius: 0.5rem !important;
         font-family: inherit !important;
         font-size: 0.9rem !important;
         outline: none !important;
         width: 100% !important;
-        color-scheme: dark !important;
+        color-scheme: light !important;
+      }
+      .custom-date-picker:focus {
+        border-color: #19866d !important;
+        box-shadow: 0 0 0 3px rgba(25, 134, 109, 0.12) !important;
       }
       .custom-date-picker::-webkit-calendar-picker-indicator {
-        filter: brightness(0) saturate(100%) invert(62%) sepia(10%) saturate(300%) hue-rotate(170deg);
+        opacity: 0.7;
         cursor: pointer;
       }
       /* Clean column alignment: Time on top, Booked beneath */
@@ -341,7 +346,8 @@ function showStep3() {
         transition: background-color 0.2s ease;
       }
       .custom-back-btn:hover {
-        background-color: #1d4ed8;
+        background-color: #d5ece6;
+        color: #18594f;
       }
     </style>
 

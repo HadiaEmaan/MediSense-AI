@@ -14,7 +14,8 @@ export function renderLabLookup(container) {
         transition: background-color 0.2s ease;
       }
       .lab-dl-btn:hover {
-        background-color: #1e40af !important;
+        background-color: #d5ece6 !important;
+        color: #18594f !important;
       }
       .lab-print-btn {
         background-color: #475569 !important;
@@ -23,7 +24,8 @@ export function renderLabLookup(container) {
         transition: background-color 0.2s ease;
       }
       .lab-print-btn:hover {
-        background-color: #1d4ed8 !important;
+        background-color: #d5ece6 !important;
+        color: #18594f !important;
       }
     </style>
     <div class="app-shell">

@@ -147,7 +147,7 @@ function formatPatientMRN(patient) {
 function clearDashboardViews() {
   const vitalsRow = document.getElementById("vitalsRow");
   if (vitalsRow) {
-    vitalsRow.innerHTML = `<div class="text-muted text-sm" style="padding:1rem;background:#0f172a;border-radius:6px;width:100%;">Queue is offline. Click <strong>Start Queue</strong> to begin calling scheduled patients.</div>`;
+    vitalsRow.innerHTML = `<div class="vitals-offline text-sm">Queue is offline. Click <strong>Start Queue</strong> to begin calling scheduled patients.</div>`;
   }
 
   const canvas = document.getElementById("scanCanvas");
@@ -376,7 +376,7 @@ async function loadVitals() {
     if (!currentRow) return;
 
     if (!data?.ok || !data.data) {
-      currentRow.innerHTML = `<div class="text-muted text-sm" style="padding:0.75rem;background:#0f172a;border-radius:6px;width:100%;">No physical vitals logged for this patient yet.</div>`;
+      currentRow.innerHTML = `<div class="vitals-empty text-sm">No physical vitals logged for this patient yet.</div>`;
       return;
     }
     const v = data.data;
@@ -678,7 +678,7 @@ async function loadPatientFolder() {
           </div>
         </div>`;
     } else {
-      rxHtml = `<div class="lab-folder-section" style="margin-top:1.25rem;"><div class="lab-folder-section-title">Prescriptions & Slips</div><div class="text-muted text-sm" style="padding:1rem;background:#0f172a;border-radius:0.5rem;text-align:center;">No prescriptions on record.</div></div>`;
+      rxHtml = `<div class="lab-folder-section" style="margin-top:1.25rem;"><div class="lab-folder-section-title">Prescriptions & Slips</div><div class="prescriptions-empty text-sm">No prescriptions on record.</div></div>`;
     }
 
     const patientName = f.patient?.name || `Patient #${currentPatientId}`;
