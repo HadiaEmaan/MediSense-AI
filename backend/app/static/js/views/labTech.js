@@ -64,9 +64,17 @@ export function renderLabTech(container) {
                 <div class="card-title">Upload New Scan</div>
                 <form id="uploadForm" class="flex flex-col gap-3">
                   <div>
-                    <label class="text-xs text-secondary">Patient MRI ID</label>
-                    <input type="text" id="patientId" value="MRI-${String(selectedPatientId).padStart(3, "0")}" placeholder="MRI-001" pattern="[Mm][Rr][Ii][-_ ]?[0-9]+|[0-9]+" required>
-                  </div>
+    <label class="text-xs text-secondary">Patient MRI ID</label>
+    <input
+        type="text"
+        id="patientId"
+        value="MRI-${String(selectedPatientId).padStart(3, "0")}"
+        placeholder="MRI-001"
+        pattern="(?:[Mm][Rr][Ii][\-_ ]?)?[0-9]+"
+        required
+    >
+</div>
+
                   <div>
                     <label class="text-xs text-secondary">Scan Type</label>
                     <select id="scanType" required>
